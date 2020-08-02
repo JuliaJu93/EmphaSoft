@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Login from './components/login';
+import Login from './pages/login';
 
 function Main() {
   return (

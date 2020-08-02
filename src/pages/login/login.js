@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Form from '../form';
+import Form from '../../components/form';
 
 function Login (props) {
     return (
