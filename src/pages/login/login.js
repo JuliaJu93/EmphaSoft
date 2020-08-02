@@ -1,8 +1,11 @@
 import React from 'react';
+import { 
+    Redirect,
+} from "react-router-dom";
 
 import Form from '../../components/form';
 
-function Login (props) {
+function Login () {
     return (
         <div>
             <Form />

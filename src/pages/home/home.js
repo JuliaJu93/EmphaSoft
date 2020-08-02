@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Home (props) {
+function Home () {
 
-    return 
+    return <h1>Умяр вообще не умеет играть в МК</h1>
 }
 
 export default Home; 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Form (props) {
+function Form () {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     return (
