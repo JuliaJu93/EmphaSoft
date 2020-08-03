@@ -3,12 +3,12 @@ import {
     Redirect,
 } from "react-router-dom";
 
-import Form from '../../components/form';
+import RegisterButton from '../../components/form';
 
 function Login () {
     return (
         <div>
-            <Form />
+            <RegisterButton />
         </div>
     );
 }
