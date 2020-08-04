@@ -8,7 +8,7 @@ function callAPI (url) {
         })
         .then((data) => {
            return data;
-        });
+        })
 }
 
 export {callAPI}
