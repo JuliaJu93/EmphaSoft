@@ -10,16 +10,10 @@ function RegisterButton () {
         url += 'scope=friends&'
         window.location.href = url;
     } 
-    useEffect(() => {
-        const token = new URLSearchParams(window.location.hash).get('#access_token');
-        if (token){
-            localStorage.setItem("authToken", token);
-        }
-    })
     
     return (
         <div>
-        <button onClick = {getToken}> Авторизоваться </button>
+            <button onClick = {getToken}> Авторизоваться </button>
         </div>
     );
 }
