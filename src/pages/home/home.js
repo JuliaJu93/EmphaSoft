@@ -3,8 +3,8 @@ import React, {useState, useEffect} from 'react';
 function Home () {
     const [user, setUser] = useState(null);
     const [friends, setFriends] = useState([]);
-    const token = new URLSearchParams(window.location.hash).get('#access_token');
-
+    const token = localStorage.getItem("authToken");
+    
     useEffect(() => {
         fetch(`https://api.vk.com/method/users.get?access_token=${token}&v=5.122`, {
             method: 'GET'

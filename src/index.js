@@ -9,6 +9,7 @@ import {
 import './index.css';
 
 import Login from './pages/login';
+import PrivateRoute from './pages/home/components/private_route';
 import Home from './pages/home';
 
 function Main() {
@@ -16,9 +17,7 @@ function Main() {
     <Router>
     <main>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+      <PrivateRoute exact path="/" component={Home}/>
     </Switch>
     <Switch>
       <Route exact path="/login">
