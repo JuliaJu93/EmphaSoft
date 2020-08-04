@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RegisterButton from '../../components/form';
+import RegisterButton from './components/register_button';
 
 function Login () {
     return (
