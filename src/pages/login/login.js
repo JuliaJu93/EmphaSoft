@@ -18,7 +18,7 @@ function Login() {
 
 	return (
 		<div>
-			{localStorage.getItem('authToken') && <Redirect to = {`${process.env.PUBLIC_URL} + /`} />}
+			{localStorage.getItem('authToken') && <Redirect to = {`${process.env.PUBLIC_URL}/`} />}
 			<RegisterButton />
 		</div>
 	);
