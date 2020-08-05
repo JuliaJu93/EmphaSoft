@@ -4,21 +4,21 @@ import { Redirect } from 'react-router-dom';
 import RegisterButton from './components/register_button';
 
 function Login() {
-	const [login, setLogin] = useState(!!localStorage.getItem('authToken'));
+	const [isLogged, setIsLogged] = useState(!!localStorage.getItem('authToken'));
 
 	useEffect(() => {
 		const token = new URLSearchParams(window.location.hash).get(
 			'#access_token'
 		);
-		if (login) {
+		if (token) {
 			localStorage.setItem('authToken', token);
-			setLogin(true);
+			setIsLogged(true);
 		}
-	}, [login]);
+	}, []);
 
 	return (
 		<div>
-			{localStorage.getItem('authToken') && <Redirect to = '/' />}
+			{isLogged && <Redirect to = '/' />}
 			<RegisterButton />
 		</div>
 	);
