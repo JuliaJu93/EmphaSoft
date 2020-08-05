@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function RegisterButton() {
 	function getToken() {
 		let url = 'https://oauth.vk.com/authorize?';
 		url += 'client_id=7557493&';
 		url += 'display=page&';
-		url += `redirect_uri={https://juliaju93.github.io${process.env.PUBLIC_URL}/login}`;
+		url += `redirect_uri=https://topux.dev/task&`;
 		url += 'response_type=token&';
 		url += 'scope=friends&';
 		window.location.href = url;

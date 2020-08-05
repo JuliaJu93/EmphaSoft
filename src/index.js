@@ -13,10 +13,10 @@ function Main() {
 		<Router>
 			<main>
 				<Switch>
-					<PrivateRoute exact path = {`${process.env.PUBLIC_URL}/`} component={Home} />
+					<PrivateRoute exact path = '/' component={Home} />
 				</Switch>
 				<Switch>
-					<Route exact path = {`${process.env.PUBLIC_URL}/login`}>
+					<Route exact path = '/login'>
 						<Login />
 					</Route>
 				</Switch>

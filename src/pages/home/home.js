@@ -37,7 +37,7 @@ function Home() {
 			.catch((error) =>
 				alert('Ошибка: не удалось загрузить список друзей', error)
 			);
-	}, []);
+	}, [token]);
 
 	return (
 		<div>
