@@ -20,7 +20,9 @@ function Home() {
 	}
 
 	useEffect(() => {
-		callAPI(`https://api.vk.com/method/users.get?access_token=${token}&v=5.122`)
+		callAPI(
+			`https://api.vk.com/method/users.get?access_token=${token}&v=5.122`
+		)
 			.then((data) => {
 				setUser(data.response[0]);
 			})
