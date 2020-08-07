@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { callAPI } from './components/call_API/call_API';
 
 function Home() {
 	const [user, setUser] = useState(null);
 	const [friends, setFriends] = useState([]);
-	const token = localStorage.getItem('authToken');
 
 	function getFriendsComponents() {
 		if (friends.length) {
@@ -20,26 +18,19 @@ function Home() {
 	}
 
 	useEffect(() => {
-		callAPI(
-			`https://api.vk.com/method/users.get?access_token=${token}&v=5.122`
-		)
-			.then((data) => {
-				setUser(data.response[0]);
-			})
-			.catch((error) =>
-				alert('Ошибка: не удалось загрузить данные пользователя', error)
-			);
-
-		callAPI(
-			`https://api.vk.com/method/friends.get?count=5&fields=nickname&fields=photo_100&access_token=${token}&v=5.122`
-		)
-			.then((data) => {
-				setFriends(data.response.items);
-			})
-			.catch((error) =>
-				alert('Ошибка: не удалось загрузить список друзей', error)
-			);
-	}, [token]);
+		//eslint-disable-next-line no-undef
+		VK.Api.call ('users.get', {v:"5.73"}, function (r) {
+			if (r.response) {
+				setUser(r.response[0]);
+			}
+		});
+		//eslint-disable-next-line no-undef
+		VK.Api.call ('friends.get',{count:5, fields:"nickname, photo_100", v:"5.73"}, function (r) {
+			if (r.response) {
+				setFriends(r.response.items);
+			}
+		});
+	}, []);
 
 	return (
 		<div>

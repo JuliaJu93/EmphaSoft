@@ -5,7 +5,6 @@ import RegisterButton from './components/register_button';
 
 function Login() {
 	const [isLogged, setIsLogged] = useState(!!localStorage.getItem('authToken'));
-
 	useEffect(() => {
 		const token = new URLSearchParams(window.location.hash).get(
 			'#access_token'
